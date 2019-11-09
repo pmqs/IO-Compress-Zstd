@@ -4,16 +4,16 @@ use strict ;
 use warnings;
 use bytes;
 
-use IO::Compress::Base::Common  2.084 qw(:Status createSelfTiedObject);
+use IO::Compress::Base::Common  2.090 qw(:Status createSelfTiedObject);
 
-use IO::Uncompress::Base  2.084 ;
-use IO::Uncompress::Adapter::Zstd  2.084 ;
+use IO::Uncompress::Base  2.090 ;
+use IO::Uncompress::Adapter::Zstd  2.090 ;
 
 
 require Exporter ;
 our ($VERSION, @ISA, @EXPORT_OK, %EXPORT_TAGS, $UnZstdError);
 
-$VERSION = '2.084';
+$VERSION = '2.090';
 $UnZstdError = '';
 
 @ISA    = qw( IO::Uncompress::Base Exporter );
@@ -210,7 +210,8 @@ The functional interface needs Perl5.005 or better.
 =head2 unzstd $input_filename_or_reference => $output_filename_or_reference [, OPTS]
 
 C<unzstd> expects at least two parameters,
-C<$input_filename_or_reference> and C<$output_filename_or_reference>.
+C<$input_filename_or_reference> and C<$output_filename_or_reference>
+and zero or more optional parameters (see L</Optional Parameters>)
 
 =head3 The C<$input_filename_or_reference> parameter
 
@@ -320,9 +321,9 @@ files/buffers.
 
 =head2 Optional Parameters
 
-Unless specified below, the optional parameters for C<unzstd>,
-C<OPTS>, are the same as those used with the OO interface defined in the
-L</"Constructor Options"> section below.
+The optional parameters for the one-shot function C<unzstd>
+are (for the most part) identical to those used with the OO interface defined in the
+L</"Constructor Options"> section. The exceptions are listed below
 
 =over 5
 
@@ -850,6 +851,12 @@ Same as doing this
 =back
 
 =head1 EXAMPLES
+
+=head1 SUPPORT
+
+General feedback/questions/bug reports should be sent to 
+L<https://github.com/pmqs/IO-Compress-Zstd/issues> (preferred) or
+L<https://rt.cpan.org/Public/Dist/Display.html?Name=IO-Compress-Zstd>.
 
 =head1 SEE ALSO
 

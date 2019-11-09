@@ -4,11 +4,11 @@ use strict;
 use warnings;
 use bytes;
 
-use IO::Compress::Base::Common  2.084 qw(:Status);
+use IO::Compress::Base::Common  2.090 qw(:Status);
 use Compress::Zstd ;
 use Compress::Zstd::Decompressor qw(ZSTD_DSTREAM_IN_SIZE);
 our ($VERSION, @ISA);
-$VERSION = '2.084';
+$VERSION = '2.090';
 
 
 sub mkUncompObject
