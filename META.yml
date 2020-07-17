@@ -20,7 +20,7 @@ no_index:
     - t
     - private
 requires:
-  Compress::Zstd: '0'
+  Compress::Stream::Zstd: '0'
   IO::Compress::Base: '2.086'
   IO::Uncompress::Base: '2.086'
 resources:

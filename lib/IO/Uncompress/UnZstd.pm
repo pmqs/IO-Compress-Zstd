@@ -60,8 +60,8 @@ sub postCheckParams
     # return  $self->saveErrorString(undef, "MultiStream not supported by Zstd", STATUS_ERROR)
     #     if $got->getValue('multistream') ;
 
-    # Compress::Zstd is only multi-stream
-    $got->setValue('multistream' => 1); 
+    # Compress::Stream::Zstd is only multi-stream
+    $got->setValue('multistream' => 1);
     return 1;
 }
 
@@ -82,7 +82,7 @@ sub mkUncomp
         if ! defined $obj;
 
     *$self->{Uncomp} = $obj;
-    
+
     return 1;
 }
 
@@ -91,21 +91,21 @@ sub ckMagic
 {
     my $self = shift;
 
-    use constant ZSTD_MAGICNUMBER  =>  0xFD2FB528  ; # >= v0.8.0 
+    use constant ZSTD_MAGICNUMBER  =>  0xFD2FB528  ; # >= v0.8.0
 
     my $magic ;
     $self->smartReadExact(\$magic, 4);
 
     *$self->{HeaderPending} = $magic ;
-    
-    return $self->HeaderError("Header size is " . 
-                                        4 . " bytes") 
+
+    return $self->HeaderError("Header size is " .
+                                        4 . " bytes")
         if length $magic != 4;
 
     return $self->HeaderError("Bad Magic.")
         if  unpack("V*", $magic) != ZSTD_MAGICNUMBER;
-                      
-        
+
+
     *$self->{Type} = 'zstd';
     return $magic;
 }
@@ -854,7 +854,7 @@ Same as doing this
 
 =head1 SUPPORT
 
-General feedback/questions/bug reports should be sent to 
+General feedback/questions/bug reports should be sent to
 L<https://github.com/pmqs/IO-Compress-Zstd/issues> (preferred) or
 L<https://rt.cpan.org/Public/Dist/Display.html?Name=IO-Compress-Zstd>.
 
@@ -882,4 +882,3 @@ Copyright (c) 2005-2019 Paul Marquess. All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
-

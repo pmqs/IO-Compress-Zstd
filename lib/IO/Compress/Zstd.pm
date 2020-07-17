@@ -9,7 +9,7 @@ use IO::Compress::Base 2.090 ;
 
 use IO::Compress::Base::Common  2.090 qw(createSelfTiedObject);
 use IO::Compress::Adapter::Zstd 2.090 ;
-use Compress::Zstd qw(ZSTD_MAX_CLEVEL);
+use Compress::Stream::Zstd qw(ZSTD_MAX_CLEVEL);
 
 
 our ($VERSION, @ISA, @EXPORT_OK, %EXPORT_TAGS, $ZstdError);
@@ -37,7 +37,7 @@ sub zstd
     return $obj->_def(@_);
 }
 
-sub mkHeader 
+sub mkHeader
 {
     my $self = shift ;
     my $param = shift ;
@@ -50,7 +50,7 @@ sub ckParams
 {
     my $self = shift ;
     my $got = shift;
-    
+
     return 1 ;
 }
 
@@ -67,8 +67,8 @@ sub mkComp
     return $self->saveErrorString(undef, $errstr, $errno)
         if ! defined $obj;
 
-    return $obj;    
-                                          
+    return $obj;
+
 }
 
 
@@ -740,7 +740,7 @@ Same as doing this
 
 =head1 SUPPORT
 
-General feedback/questions/bug reports should be sent to 
+General feedback/questions/bug reports should be sent to
 L<https://github.com/pmqs/IO-Compress-Zstd/issues> (preferred) or
 L<https://rt.cpan.org/Public/Dist/Display.html?Name=IO-Compress-Zstd>.
 
@@ -768,4 +768,3 @@ Copyright (c) 2005-2019 Paul Marquess. All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
-

@@ -5,8 +5,8 @@ use warnings;
 use bytes;
 
 use IO::Compress::Base::Common  2.090 qw(:Status);
-use Compress::Zstd qw(ZSTD_MAX_CLEVEL);
-use Compress::Zstd::Compressor qw(ZSTD_CSTREAM_IN_SIZE);
+use Compress::Stream::Zstd qw(ZSTD_MAX_CLEVEL);
+use Compress::Stream::Zstd::Compressor qw(ZSTD_CSTREAM_IN_SIZE);
 
 our ($VERSION);
 $VERSION = '2.090';
@@ -16,7 +16,7 @@ sub mkCompObject
     my $level = shift ;
 
     # TODO - parameterise level
-    my $compressor = Compress::Zstd::Compressor->new($level);
+    my $compressor = Compress::Stream::Zstd::Compressor->new($level);
 
     return bless {
                   'Def'        => $compressor,
@@ -25,7 +25,7 @@ sub mkCompObject
                   'ErrorNo'    => 0,
                   'CompBytes'  => 0,
                   'UnCompBytes'=> 0,
-                 } ;     
+                 } ;
 }
 
 sub compr
@@ -47,7 +47,7 @@ sub compr
     $self->{Error}   = '';
     $self->{ErrorNo} = 0;
 
-     return STATUS_OK;   
+     return STATUS_OK;
 }
 
 sub flush
@@ -66,7 +66,7 @@ sub flush
 
     $self->{ErrorNo} = 0;
 
-     return STATUS_OK;   
+     return STATUS_OK;
 }
 
 sub close
@@ -81,10 +81,10 @@ sub close
     {
         $self->{ErrorNo} = $def->status() ;
         return STATUS_ERROR ;
-    }    
+    }
     $self->{ErrorNo} = 0;
 
-     return STATUS_OK; 
+     return STATUS_OK;
 }
 
 
@@ -101,11 +101,11 @@ sub reset
     {
         $self->{ErrorNo} = $def->status() ;
         return STATUS_ERROR ;
-    }   
+    }
 
     $self->{ErrorNo} = 0;
 
-     return STATUS_OK; 
+     return STATUS_OK;
 }
 
 sub compressedBytes
@@ -123,4 +123,3 @@ sub uncompressedBytes
 1;
 
 __END__
-

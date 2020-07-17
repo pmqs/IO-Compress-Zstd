@@ -5,8 +5,8 @@ use warnings;
 use bytes;
 
 use IO::Compress::Base::Common  2.090 qw(:Status);
-use Compress::Zstd ;
-use Compress::Zstd::Decompressor qw(ZSTD_DSTREAM_IN_SIZE);
+use Compress::Stream::Zstd ;
+use Compress::Stream::Zstd::Decompressor qw(ZSTD_DSTREAM_IN_SIZE);
 our ($VERSION, @ISA);
 $VERSION = '2.090';
 
@@ -14,17 +14,17 @@ $VERSION = '2.090';
 sub mkUncompObject
 {
 
-    my $decompressor = Compress::Zstd::Decompressor->new;
+    my $decompressor = Compress::Stream::Zstd::Decompressor->new;
 
     return bless {
                   'Inf'          => $decompressor,
 
                   'CompBytes'    => 0,
-                  'UnCompBytes'  => 0,        
+                  'UnCompBytes'  => 0,
                   'Error'        => '',
                   'ErrorNo'      => 0,
                   'ConsumesInput' => 0,
-                 } ;     
+                 } ;
 }
 
 sub uncompr
@@ -96,4 +96,3 @@ sub sync
 1;
 
 __END__
-
