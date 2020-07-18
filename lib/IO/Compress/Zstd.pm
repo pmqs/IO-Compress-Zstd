@@ -5,16 +5,16 @@ use warnings;
 require Exporter ;
 use bytes;
 
-use IO::Compress::Base 2.090 ;
+use IO::Compress::Base 2.095 ;
 
-use IO::Compress::Base::Common  2.090 qw(createSelfTiedObject);
-use IO::Compress::Adapter::Zstd 2.090 ;
+use IO::Compress::Base::Common  2.095 qw(createSelfTiedObject);
+use IO::Compress::Adapter::Zstd 2.095 ;
 use Compress::Stream::Zstd qw(ZSTD_MAX_CLEVEL);
 
 
 our ($VERSION, @ISA, @EXPORT_OK, %EXPORT_TAGS, $ZstdError);
 
-$VERSION = '2.090';
+$VERSION = '2.095';
 $ZstdError = '';
 
 @ISA    = qw( IO::Compress::Base Exporter );
@@ -192,7 +192,7 @@ It can take one of the following forms:
 
 =item A filename
 
-If the <$input_filename_or_reference> parameter is a simple scalar, it is
+If the C<$input_filename_or_reference> parameter is a simple scalar, it is
 assumed to be a filename. This file will be opened for reading and the
 input data will be read from it.
 
@@ -723,7 +723,7 @@ See the L</"Constructor Options"> section for more details.
 
 =head1 Importing
 
-No symbolic constants are required by this IO::Compress::Zstd at present.
+No symbolic constants are required by IO::Compress::Zstd at present.
 
 =over 5
 
@@ -764,7 +764,8 @@ See the Changes file.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2005-2019 Paul Marquess. All rights reserved.
+Copyright (c) 2019-2020 Paul Marquess. All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
+

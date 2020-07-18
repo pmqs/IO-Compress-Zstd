@@ -1,11 +1,11 @@
 
                             IO-Compress-Zstd
 
-                             Version 2.094
+                              Version 2.095
 
-                              17 July 2020
+                               18 July 2020
 
-       Copyright (c) 2005-2020 Paul Marquess. All rights reserved.
+       Copyright (c) 2019-2020 Paul Marquess. All rights reserved.
           This program is free software; you can redistribute it
            and/or modify it under the same terms as Perl itself.
 
@@ -76,16 +76,16 @@ To help me help you, I need all of the following information:
         If you have successfully installed IO-Compress-Zstd, this one-liner
         will tell you:
 
-           perl -IO::Compress::Zstd -e 'print qq[ver $IO::Compress::Stream::Zstd::VERSION\n]'
+           perl -MIO::Compress::Zstd -e 'print qq[ver $IO::Compress::Zstd::VERSION\n]'
 
         If you are  running windows use this
 
-           perl -IO::Compress::Zstd -e "print qq[ver $IO::Compress::Stream::Zstd::VERSION\n]"
+           perl -MIO::Compress::Zstd -e "print qq[ver $IO::Compress::Zstd::VERSION\n]"
 
-        If you haven't installed IO-Compress-Zstd then search IO::Compress::Stream::Zstd.pm
+        If you haven't installed IO-Compress-Zstd then search IO::Compress::Zstd.pm
         for a line like this:
 
-          $VERSION = "2.094" ;
+          $VERSION = "2.095" ;
 
  2. If you are having problems building IO-Compress-Zstd, send me a
     complete log of what happened. Start by unpacking the IO-Compress-Zstd

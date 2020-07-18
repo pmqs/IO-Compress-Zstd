@@ -2,7 +2,7 @@ README
 lib/IO/Uncompress/UnZstd.pm
 lib/IO/Compress/Zstd.pm
 lib/IO/Compress/Adapter/Zstd.pm
-lib/IO/Uncompress/Adapter/Zstd.pm
+lib/IO/Uncompress/Adapter/UnZstd.pm
 Makefile.PL
 t/000prereq.t
 t/050interop-zstd.t
@@ -16,7 +16,7 @@ t/106prime-zstd.t
 t/107multi-zstd.t
 t/108anyunc-zstd.t
 t/110encode-zstd.t
-t/meta-json.t 
+t/meta-json.t
 t/meta-yaml.t
 t/999pod.t
 t/Test/Builder.pm

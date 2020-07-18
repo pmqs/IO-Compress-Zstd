@@ -4,16 +4,16 @@ use strict ;
 use warnings;
 use bytes;
 
-use IO::Compress::Base::Common  2.090 qw(:Status createSelfTiedObject);
+use IO::Compress::Base::Common  2.095 qw(:Status createSelfTiedObject);
 
-use IO::Uncompress::Base  2.090 ;
-use IO::Uncompress::Adapter::Zstd  2.090 ;
+use IO::Uncompress::Base  2.095 ;
+use IO::Uncompress::Adapter::UnZstd  2.095 ;
 
 
 require Exporter ;
 our ($VERSION, @ISA, @EXPORT_OK, %EXPORT_TAGS, $UnZstdError);
 
-$VERSION = '2.090';
+$VERSION = '2.095';
 $UnZstdError = '';
 
 @ISA    = qw( IO::Uncompress::Base Exporter );
@@ -224,7 +224,7 @@ It can take one of the following forms:
 
 =item A filename
 
-If the <$input_filename_or_reference> parameter is a simple scalar, it is
+If the C<$input_filename_or_reference> parameter is a simple scalar, it is
 assumed to be a filename. This file will be opened for reading and the
 input data will be read from it.
 
@@ -837,7 +837,7 @@ C<InputLength> option in the constructor.
 
 =head1 Importing
 
-No symbolic constants are required by this IO::Uncompress::UnZstd at present.
+No symbolic constants are required by IO::Uncompress::UnZstd at present.
 
 =over 5
 
@@ -878,7 +878,8 @@ See the Changes file.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2005-2019 Paul Marquess. All rights reserved.
+Copyright (c) 2005-2020 Paul Marquess. All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
+
