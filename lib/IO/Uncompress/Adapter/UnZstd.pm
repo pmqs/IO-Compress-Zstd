@@ -1,4 +1,4 @@
-package IO::Uncompress::Adapter::Zstd;
+package IO::Uncompress::Adapter::UnZstd;
 
 use strict;
 use warnings;

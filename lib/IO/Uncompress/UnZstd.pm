@@ -76,7 +76,7 @@ sub mkUncomp
     *$self->{Info} = $self->readHeader($magic)
         or return undef ;
 
-    my ($obj, $errstr, $errno) = IO::Uncompress::Adapter::Zstd::mkUncompObject();
+    my ($obj, $errstr, $errno) = IO::Uncompress::Adapter::UnZstd::mkUncompObject();
 
     return $self->saveErrorString(undef, $errstr, $errno)
         if ! defined $obj;
@@ -882,4 +882,3 @@ Copyright (c) 2005-2020 Paul Marquess. All rights reserved.
 
 This program is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself.
-
