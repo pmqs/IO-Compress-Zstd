@@ -34,7 +34,10 @@ jobs:
     - name: Perl version
       run: perl -V
     - name: Install dependencies
-      run: cpanm --verbose --installdeps --notest .
+      run: |
+        cpanm --verbose --notest https://github.com/pmqs/Compress-Stream-Zstd.git
+        cpanm --verbose --notest https://github.com/pmqs/IO-Compress.git       
+        cpanm --verbose --installdeps --notest .
     - name: Build
       run: perl Makefile.PL && make
     - name: Test
