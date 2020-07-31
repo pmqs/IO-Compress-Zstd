@@ -92,7 +92,7 @@ sub mkFinalTrailer
 #}
 
 our %PARAMS = (
-    'level' => [IO::Compress::Base::Common::Parse_unsigned,  ZSTD_MAX_CLEVEL],
+    'level' => [IO::Compress::Base::Common::Parse_unsigned,  3],
     );
 
 sub getExtraParams
@@ -526,7 +526,7 @@ Defines the compression level used.
 
 This gets passed to the ZSTD function ZSTD_initCStream.
 
-Default is ZSTD_MAX_CLEVEL
+Default is 3
 
 =item C<< Strict => 0|1 >>
 
