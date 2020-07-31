@@ -6,6 +6,9 @@ CHANGES
       * set level default to 3. Matches zstd commandline
         ab446b18f564c0e547619e740b2dce62899af7a7
 
+      * Add test files for Zstd support in zip/unzip
+        8faacd10944ae68570135780a7bf2c875108fdaf
+
 2.095 19 July 2020
 
       * First Release
