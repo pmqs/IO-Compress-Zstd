@@ -36,7 +36,7 @@ sub uncompr
 
     my $inf  = $self->{Inf};
 
-    eval { $$to = $inf->decompress($$from); } ;
+    eval { $$to .= $inf->decompress($$from); } ;
 
     if ($@ || $inf->isError())
     {

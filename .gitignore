@@ -10,6 +10,7 @@
 !.cirrus.yml
 !.github
 !.gitignore
+!.gitattributes
 !.perltidyrc
 !.travis.yml
 
