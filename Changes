@@ -1,6 +1,12 @@
 CHANGES
 -------
 
+  2.097 11 Ovtober 2020
+
+      * Fix for uncompression of long content
+        https://github.com/pmqs/IO-Compress-Zstd/issues/1
+        0fbed1190cb80c26c2940238d0d6c94325fb733d
+
   2.096 31 July 2020
 
       * set level default to 3. Matches zstd commandline

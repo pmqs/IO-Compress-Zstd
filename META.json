@@ -52,6 +52,6 @@
          "web" : "https://github.com/pmqs/IO-Compress-Zstd"
       }
    },
-   "version" : "2.096",
+   "version" : "2.097",
    "x_serialization_backend" : "JSON::PP version 2.27300"
 }
