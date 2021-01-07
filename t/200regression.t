@@ -49,11 +49,11 @@ SKIP:
     my $filename = 't/files/setup.zst';
 
     # Don't distribute file on CPAN
-    skip "test file not available", 7
+    skip "test file not available", 11
         unless -e $filename ;
 
     eval { require Digest::MD5 }
-        or skip "Digest::MD5 not available", 7;
+        or skip "Digest::MD5 not available", 11;
 
     my $tmpDir ;
     my $lex = LexDir->new( $tmpDir );
